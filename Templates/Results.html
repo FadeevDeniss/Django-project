@@ -1,0 +1,12 @@
+<form method="post">{% csrf_token %}
+<h1>RESULTS</h1>
+    {% if ad_list %}
+    <ul>
+        {% for ad in ad_list %}
+        <li><a href="{{ ad.url }}">
+            {{ ad.title }} {{ ad.price }}
+        </a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</form>
